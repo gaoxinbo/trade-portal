@@ -19,6 +19,7 @@ p = provider.DataProvider()
 @app.route("/")
 def index():
   position = p.getCurrentPosition()
+  #portion = p.getPortion()
   return render_template("index.html", position=position)
 
 if __name__ == '__main__':

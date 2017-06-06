@@ -26,5 +26,19 @@
       {% endfor %}
     </table>
 
+    <h2>Portion </h2> 
+
+    <div id="portion" style="height: 250px; width : 800px" ></div>
+
+<script>
+new Morris.Donut({
+  element: 'portion',
+  data: [
+    {label: "Download Sales", value: 12},
+    {label: "In-Store Sales", value: 30},
+    {label: "Mail-Order Sales", value: 20}
+  ]
+});
+</script>
 
 {% endblock %}
