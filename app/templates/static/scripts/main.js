@@ -24,7 +24,7 @@ require(['Vue', 'jquery'], function (Vue, $){
             var self = this;
 
             $.ajax({
-                url: 'http://localhost:5000/position',
+                url: '/position',
                 method: 'GET',
                 success: function (data) {
                     self.content = data;
