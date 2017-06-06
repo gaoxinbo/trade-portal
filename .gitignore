@@ -3,3 +3,4 @@ portal_env
 .vscode
 __pycache__
 *.log
+.DS_Store

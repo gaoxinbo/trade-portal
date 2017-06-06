@@ -1,44 +1,47 @@
-{% extends "layout.html" %}
+<html>
+    <head>
+        <title>Trading Portal</title>
+        
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-{% block body %}
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <script data-main="static/scripts/main" src="static/scripts/require.js"></script>
+    </head>
 
+    <body>
 
-  <h1>
-  Overview
-  </h1>
-    <h2>
-      Postion
-    </h2>
-    <table class="table">
-      <tr>
-        <th>Symbol</th>
-        <th>Position</th>
-        <th>Average Cost</th>
-        <th>Currency</th>
-      </tr>
-      {% for item in position %}
-        <tr>
-          <td>{{ item.symbol }}</td>
-          <td>{{ item.position }}</td>
-          <td>{{ item.avg_cost }}</td>
-          <td>{{ item.currency }}</td>
-        </tr>
-      {% endfor %}
-    </table>
+          <div style="padding-bottom:60px;padding-top:60px;background-color:#563d7c;margin-top:20px;margin-bottom:20px">
+              <div class="container">
+                  <h1 style="color:#fff">Trading Portal</h1>
+              </div>
+          </div>
 
-    <h2>Portion </h2> 
+          <div class="container">
+              <h1>Overview</h1>
+                  <h2>Position</h2>
 
-    <div id="portion" style="height: 250px; width : 800px" ></div>
+                  <div id="position">
+                      <table class="table">
+                          <tr>
+                            <th v-for="item in header"> 
+                                [[ item ]]
+                            </th>
+                          </tr>
 
-<script>
-new Morris.Donut({
-  element: 'portion',
-  data: [
-    {label: "Download Sales", value: 12},
-    {label: "In-Store Sales", value: 30},
-    {label: "Mail-Order Sales", value: 20}
-  ]
-});
-</script>
-
-{% endblock %}
+                          <tr v-for="contract in content">
+                            <td>[[ contract.symbol ]]</td>
+                            <td>[[ contract.position ]]</td>
+                            <td>[[ contract.avg_cost ]]</td>
+                            <td>[[ contract.currency ]]</td>
+                          </tr>
+                      </table>
+                  </div>
+              
+            
+          </div>
+    </body>
+</html>
