@@ -40,8 +40,9 @@ if __name__ == '__main__':
         print_err_and_exit()
       
 
-    conn = get_connection(sys.argv[1])
     logger = get_logger()
+    logger.info("start...")
+    conn = get_connection(sys.argv[1])
 
     sql = "replace into daily_price (symbol, trade_date, open_price, close_price) values (%s, %s, %s, %s)"
 
@@ -59,3 +60,4 @@ if __name__ == '__main__':
             cursor.execute(sql, opt)
             conn.commit()
   
+    logger.info("end")
