@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+  <h1>
+  Overview
+  </h1>
+    <h2>
+      Postion
+    </h2>
+    <table class="table">
+      <tr>
+        <th>Symbol</th>
+        <th>Position</th>
+        <th>Average Cost</th>
+        <th>Currency</th>
+      </tr>
+      {% for item in position %}
+        <tr>
+          <td>{{ item.symbol }}</td>
+          <td>{{ item.position }}</td>
+          <td>{{ item.avg_cost }}</td>
+          <td>{{ item.currency }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+
+{% endblock %}

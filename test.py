@@ -4,6 +4,7 @@
 from yahoo_finance import Share
 
 s = Share("FB")
+s.refresh()
 
 print("open " + s.get_open())
 print("close " + s.get_price())
