@@ -4,7 +4,7 @@ import db
 
 class DataProvider():
     def __init__(self):
-        self.conn = db.get_connection("harbin73") 
+        self.conn = db.get_connection("840326") 
 
     def getCurrentPosition(self):
         sql = "select symbol, position, avg_cost, currency from position"
