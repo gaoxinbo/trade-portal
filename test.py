@@ -3,8 +3,7 @@
 # coding=utf8
 from yahoo_finance import Share
 
-s = Share("FB")
-s.refresh()
+s = Share("0700.hk")
 
 print("open " + s.get_open())
 print("close " + s.get_price())

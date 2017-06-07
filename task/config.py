@@ -8,5 +8,6 @@ SYMBOL_LIST=[
   'BABA',
   'FB',
   'AMZN',
-  'AAPL' 
+  'AAPL', 
+  '0700.hk'
 ]
