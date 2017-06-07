@@ -18,6 +18,16 @@ class DataProvider():
                 r['position'] = item[1]
                 r['avg_cost'] = item[2]
                 r['currency'] = item[3]
+
+                closePrice = self.getCurrentClosePrice(item[0])
+                if not closePrice:
+                    r['last_trade_date'] = None
+                    r['last_price'] = None
+                    r['profit'] = None
+                else:
+                    r['last_price'] = closePrice['close']
+                    r['last_trade_date'] = str(closePrice['date'])
+                    r['profit'] = (r['last_price'] - r['avg_cost']) * r['position']
                 d.append(r)
             
         return d
@@ -40,7 +50,7 @@ class DataProvider():
 
 
     def getCurrentClosePrice(self, symbol):
-        sql = "select close_price from daily_price where symbol = %s order by trade_date desc limit 1"  
+        sql = "select close_price, trade_date from daily_price where symbol = %s order by trade_date desc limit 1"  
         d = {}
         with self.conn.cursor() as cursor:
             cursor.execute(sql, symbol)    
@@ -50,6 +60,7 @@ class DataProvider():
 
 
             d['close'] = item[0]
+            d['date'] = item[1]
         return d
 
 

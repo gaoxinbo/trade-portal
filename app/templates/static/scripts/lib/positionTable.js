@@ -14,7 +14,11 @@ define(function (require) {
                             'Symbol',
                             'Position',
                             'Average Cost',
-                            'Currency'
+                            'LastClosePrice',
+                            'LastTradeDate',
+                            'Profit',
+                            'Currency',
+
                         ],
                         'content' : []
                 },
