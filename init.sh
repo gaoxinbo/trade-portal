@@ -14,6 +14,7 @@ if [ ! -d $VIRTUAL_ENV_BASE ]; then
   pip install flask
   pip install flask-restful
   pip install Gunicorn 
+  pip install uwsgi
 fi
 
 

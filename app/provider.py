@@ -27,7 +27,7 @@ class DataProvider():
                 else:
                     r['last_price'] = closePrice['close']
                     r['last_trade_date'] = str(closePrice['date'])
-                    r['profit'] = (r['last_price'] - r['avg_cost']) * r['position']
+                    r['profit'] = int((r['last_price'] - r['avg_cost']) * r['position'])
                 d.append(r)
             
         return d
