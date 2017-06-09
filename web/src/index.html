@@ -2,49 +2,53 @@
     <head>
         <title>Trading Portal</title>
         
-        
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <!-- Optional theme -->
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
-        
-        <!--<script data-main="static/scripts/main" src="static/scripts/require.js"></script>-->
     </head>
 
     <body>
         
-        <!--<div style="padding-bottom:60px;padding-top:60px;background-color:#563d7c;margin-top:20px;margin-bottom:20px">
-            <div class="container">
-                <h1 style="color:#fff">Trading Portal</h1>
-            </div>
-        </div>-->
+
         <div id="banner"></div>
+
+        
+        
         <div class="container">
             
             <h1>Overview</h1>
                 <h2>Position</h2>
 
-                  <div id="position">
+                <div id="vue-position"></div>
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th>test</th>
+                        </tr>
+                        <tr>
+                            <td>bac</td>
+                        </tr>
+                    </table>
+                </div>
+                  <!--<div id="position">
                       <table class="table">
                           <tr>
                             <th v-for="item in header"> 
-                                [[ item ]]
+                                {{ item }}
                             </th>
                           </tr>
 
                           <tr v-for="contract in content">
-                            <td>[[ contract.symbol ]]</td>
-                            <td>[[ contract.position ]]</td>
-                            <td>[[ contract.avg_cost ]]</td>
-                            <td>[[ contract.last_price ]]</td>
-                            <td>[[ contract.last_trade_date ]]</td>
-                            <td>[[ contract.profit ]]</td>
-                            <td>[[ contract.currency ]]</td>
+                            <td>{{ contract.symbol }}  </td>
+                            <td>{{ contract.position }}</td>
+                            <td>{{ contract.avg_cost }}</td>
+                            <td>{{ contract.last_price }}</td>
+                            <td>{{ contract.last_trade_date }}</td>
+                            <td>{{ contract.profit }}</td>
+                            <td>{{ contract.currency }}</td>
 
                           </tr>
                       </table>
-                  </div>
+                  </div>-->
                   
         </div>
     </body>
