@@ -19,9 +19,15 @@ module.exports = {
          "filename": "./index.html",
          "template": "index.html"
          })
-     ],
-  resolve: {
-      alias: {
-      }
+  ],
+
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+    ]
   }
+
 };

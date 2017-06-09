@@ -1,7 +1,12 @@
 //import Vue from "Vue";
 import Vue from 'vue/dist/vue.js'
 import $ from "jquery";
+import App from './components/banner.vue'
 
+var banner = new Vue({
+  el: '#banner',
+  render: h => h(App)
+})
 
 var app = new Vue({
                 delimiters: ['[[', ']]'],
