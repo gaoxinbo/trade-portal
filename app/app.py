@@ -42,10 +42,6 @@ api.add_resource(getPosition, '/position')
 
 
 
-@app.route("/")
-def index():
-  #portion = p.getPortion()
-  return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
