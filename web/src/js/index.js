@@ -24,7 +24,7 @@ var app = new Vue({
                     var self = this;
 
                     $.ajax({
-                        url: '/api/position',
+                        url: 'http://192.168.1.80:8000/position',
                         method: 'GET',
                         jsonp: "callback",
                         dataType: "jsonp",
