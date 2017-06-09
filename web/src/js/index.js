@@ -19,6 +19,8 @@ var p = new Vue({
   }
 });
 
+
+
 // var app = new Vue({
 //                 el: '#position',
 //                 data: {
