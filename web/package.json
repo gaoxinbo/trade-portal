@@ -5,16 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "webpack",
-    "server" : "webpack-dev-server"
+    "release": "webpack -p",
+    "build": "webpack",
+    "server": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
-  },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "vue": "^2.3.4"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.28.0"
   }
 }

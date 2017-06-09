@@ -10,7 +10,6 @@
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
         
         <!--<script data-main="static/scripts/main" src="static/scripts/require.js"></script>-->
-       <script src="../dist/index.bundle.js"></script>
     </head>
 
     <body>
@@ -20,5 +19,31 @@
             </div>
         </div>
 
+        <div class="container">
+            <h1>Overview</h1>
+                <h2>Position</h2>
+
+                  <div id="position">
+                      <table class="table">
+                          <tr>
+                            <th v-for="item in header"> 
+                                [[ item ]]
+                            </th>
+                          </tr>
+
+                          <tr v-for="contract in content">
+                            <td>[[ contract.symbol ]]</td>
+                            <td>[[ contract.position ]]</td>
+                            <td>[[ contract.avg_cost ]]</td>
+                            <td>[[ contract.last_price ]]</td>
+                            <td>[[ contract.last_trade_date ]]</td>
+                            <td>[[ contract.profit ]]</td>
+                            <td>[[ contract.currency ]]</td>
+
+                          </tr>
+                      </table>
+                  </div>
+                  
+        </div>
     </body>
 </html>
