@@ -5,7 +5,9 @@ import App from './components/banner.vue'
 
 var banner = new Vue({
   el: '#banner',
-  render: h => h(App)
+  render: function(createElement) {
+    return createElement(App);
+  }
 })
 
 var app = new Vue({
