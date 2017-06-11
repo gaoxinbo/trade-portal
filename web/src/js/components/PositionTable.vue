@@ -9,9 +9,9 @@
             <tr v-for="contract in content">
                 <td>{{ contract.symbol }}  </td>
                 <td>{{ contract.position }}</td>
-                <td>{{ contract.avg_cost }}</td>
-                <td>{{ contract.last_price }}</td>
-                <td>{{ contract.last_trade_date }}</td>
+                <td>{{ contract.avgCost }}</td>
+                <td>{{ contract.lastClosePrice }}</td>
+                <td>{{ contract.lastTradingDate }}</td>
                 <td>{{ contract.profit }}</td>
                 <td>{{ contract.currency }}</td>
             </tr>
@@ -43,7 +43,7 @@ module.exports = {
         var self = this;
 
         $.ajax({
-            url: 'http://192.168.1.80:8000/position',
+            url: 'http://192.168.1.80:8000/dataservice/position',
             method: 'GET',
             jsonp: "callback",
             dataType: "jsonp",
