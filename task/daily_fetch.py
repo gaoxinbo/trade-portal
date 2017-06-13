@@ -35,6 +35,23 @@ def get_connection(passwd):
                                  password=passwd)
     return connection
 
+
+def download_data(conn, symbol):
+    with conn.cursor() as cursor:
+        logger.info("fetching " + symbol)
+        s = yahoo_finance.Share(symbol)
+        opt = [] 
+        opt.append(symbol)
+        opt.append(s.get_trade_datetime()[0:10])
+        opt.append(s.get_open())
+        opt.append(s.get_price())
+        logger.info(opt)
+    
+        cursor.execute(sql, opt)
+        conn.commit()
+
+    return
+  
 if __name__ == '__main__':
     if len(sys.argv) <  2:      
         print_err_and_exit()
@@ -47,17 +64,10 @@ if __name__ == '__main__':
     sql = "replace into daily_price (symbol, trade_date, open_price, close_price) values (%s, %s, %s, %s)"
 
     for symbol in config.SYMBOL_LIST:
-        with conn.cursor() as cursor:
-            logger.info("fetching " + symbol)
-            s = yahoo_finance.Share(symbol)
-            opt = [] 
-            opt.append(symbol)
-            opt.append(s.get_trade_datetime()[0:10])
-            opt.append(s.get_open())
-            opt.append(s.get_price())
-            logger.info(opt)
-    
-            cursor.execute(sql, opt)
-            conn.commit()
-  
+        try:
+            download_data(conn, symbol)
+        except Exception as err:
+            logger.info(err)
+            continue
+
     logger.info("end")
