@@ -1,22 +1,16 @@
-//import Vue from "Vue";
 import Vue from 'vue/dist/vue.js'
+import VueRouter from 'vue-router'
 
 import App from './components/banner.vue'
-import positionApp from "./components/homepage/PositionTable.vue"
 import buildVersionApp from "./components/BuildVersion.vue"
+import overview from './components/overview/overview.vue'
 
-var banner = new Vue({
+Vue.use(VueRouter);
+
+new Vue({
   el: '#banner',
   render: function(createElement) {
     return createElement(App);
-  }
-});
-
-
-var p = new Vue({
-  el: '#vue-position',
-  render: function(createElement) {
-    return createElement(positionApp);
   }
 });
 
@@ -28,3 +22,14 @@ new Vue({
 });
 
 
+const routes = [
+  { path: '/', component: overview },
+]
+
+const router = new VueRouter({
+  routes 
+})
+
+const app = new Vue({
+  router
+}).$mount('#app')

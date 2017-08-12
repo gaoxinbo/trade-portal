@@ -7,18 +7,19 @@
     </head>
 
     <body>
-        
+        <div>
 
-        <div id="banner"></div>
-
-        
-        
-        <div class="container">
+            <div id="banner"></div>
             
-            <h1>Overview</h1>
-            <h2>Position</h2>
-            <div id="vue-position"></div>
-            <div id="buildVersion"></div>  
+            <div class="container">
+            
+                <div id="app">
+                    <router-view></router-view>
+                </div>
+                <div id="buildVersion"></div>  
+            </div>
+
+            
         </div>
     </body>
 </html>
